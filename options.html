@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="./css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./css/options.css" />
+		<script src="./js/jquery-3.5.0.min.js"></script>
+		<script src="./js/jquery.cookie.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<div class="row">
+						<div class="col-9">
+							<h2>HERO Timesheet</h2>
+						</div>
+						<div class="col-3">
+							<div class="float-right" style="margin-top: 5px;">
+								<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+									<input type="hidden" name="charset" value="utf-8">
+									<input type="hidden" name="business" value="qvsoft@gmail.com">
+									<input type="hidden" name="cmd" value="_donations">
+									<input type="hidden" name="item_name" value="Donate for HERO Timesheet extension">
+									<input type="hidden" name="item_number" value="10">
+									<input type="hidden" name="currency_code" value="USD">
+									<input type="submit" class="btn btn-primary pull-right" title="The extension save your time, your donation save my life ;)" value="Donate">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div id="message" style="display: none;">
+						<div class="alert alert-primary"></div>
+					</div>
+					<form>
+						<div class="row">
+							<div class="form-group col-6">
+								<label for="predefined-desc">Predefined Descriptions</label>
+								<textarea placeholder="Text|Value|Default" class="form-control option" id="predefined-desc" name="predefined_desc" rows="10"></textarea>
+								<small class="form-text text-muted">
+								Define the default value for Timesheet Record Description, using this format:
+								<br/>Text|Value|Default
+								<br/>One item in per line
+								</small>
+							</div>
+							<div class="form-group col-6">
+								<label for="customscripts">Custom Scripts</label>
+								<textarea class="form-control option" id="customscripts" name="customscripts" rows="10"></textarea>
+								<small class="form-text text-muted">Custom JS Scripts to be embed to the page, each script url per line<br/>
+								For example: //cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js</small>
+							</div>
+						</div>
+						<code>
+						<p>You can do magic thing using callback functions, let's become a HERO timesheet!</p>
+						<p>Accessible varialbes: userId, csrf, myWorkingHoursByDate</p>
+						<p>Function can be called in onPageReady, onSubPageReady:</p>
+						<p>addTimesheetRecord(division, task, project, date, timesheethours, taskdescription = '', worklocation = 'Local', isdraft = true, callback = null) - Input value the same in add timesheet form</p>
+						<p>Don't use callback function if you don't know what are you doing, it can stop the extension ;)</p>
+						</code>
+						<div class="row">
+							<div class="form-group col-6">
+								<label for="onload">onLoad Callback</label>
+								<textarea class="form-control option" id="onload" name="onload" rows="10"></textarea>
+								<small class="form-text text-muted">onLoad callback function will be triggered immediately when extension load</small>
+							</div>
+							<div class="form-group col-6">
+								<label for="ondataloaded">onDataLoaded Callback</label>
+								<textarea class="form-control option" id="ondataloaded" name="ondataloaded" rows="10"></textarea>
+								<small class="form-text text-muted">onDataLoaded callback function will be triggered after ajax load the working hour data. Accessible varialbes: myWorkingHours</small>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-6">
+								<label for="onpageready">onPageReady Callback</label>
+								<textarea class="form-control option" id="onpageready" name="onpageready" rows="10"></textarea>
+								<small class="form-text text-muted">onPageReady callback function will be triggered first time once main page ready</small>
+							</div>
+							<div class="form-group col-6">
+								<label for="onsubpageready">onSubPageReady Callback</label>
+								<textarea class="form-control option" id="onsubpageready" name="onsubpageready" rows="10"></textarea>
+								<small class="form-text text-muted">onSubPageReady callback function will be triggered everytime sub page ready</small>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary save-config">Save</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<p></p>
+	</body>
+	<script src="js/options.js"></script>
+</html>

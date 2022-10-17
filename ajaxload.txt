@@ -1,0 +1,38 @@
+AJAX LOAD
+
+Get departments:
+https://people.zoho.com/hrportal1524046581683/viewAction.zp
+mode: fetchRecords
+formId: 412762000000035681
+viewId: 412762000000035707
+isOnload: true
+startInd: 1
+conreqcsr: 94efcfcabc5e240f3126e30f7c9a843e5308dce043665315bc2797fd0caaa4b3a5ac6013521457584c8be6575a537a47ada549aebafb34376c9ebb6235b31bcf
+
+Get Projects:
+https://people.zoho.com/hrportal1524046581683/viewAction.zp
+mode: fetchRecords
+formId: 412762000001761987
+viewId: 412762000001761989
+isOnload: true
+startInd: 1
+conreqcsr: 94efcfcabc5e240f3126e30f7c9a843e5308dce043665315bc2797fd0caaa4b3a5ac6013521457584c8be6575a537a47ada549aebafb34376c9ebb6235b31bcf
+
+Add/Update Record
+https://people.zoho.com/hrportal1524046581683/addUpdateRecord.zp
+Emp_info: 412762000017797895
+Division: 412762000000119133
+Task: 412762000001808589
+Timesheet_Hours: 4.6
+Project: 412762000026783885
+Work_location: Local
+Date: 06-May-2020
+Task_Description: 
+Billable_Hours: 0
+zp_tableName: t_412762000003736053
+loginUserZUID: 702271892
+conreqcsr: 94efcfcabc5e240f3126e30f7c9a843e5308dce043665315bc2797fd0caaa4b3a5ac6013521457584c8be6575a537a47ada549aebafb34376c9ebb6235b31bcf
+zp_formId: 412762000003736053
+zp_mode: addRecord
+isDraft: false
+isResubmit: false

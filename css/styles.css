@@ -1,0 +1,216 @@
+/* LogTimeSheet Form */
+.zp-label.default {
+	border-bottom: 1px solid #00ae0d;
+}
+
+.zp-label.default .zplt-label {
+	color: #00ae0d;
+}
+
+.zplt-label .set-default {
+	color: #00ae0d;
+	cursor: pointer;
+	font-size: 15px;
+	transition: all 200ms;
+}
+
+.zplt-label .set-default.clicked {
+	font-size: 17px;
+}
+
+.zp-msg .timesheet-hour {
+	color: #999;
+	float: left;
+}
+
+.zp-msg .timesheet-hour .hour-left {
+	font-size: bold;
+}
+
+.zp-msg .timesheet-hour .hour-total {
+	font-size: bold;
+}
+
+.zp-msg .timesheet-status {
+	float: right;
+}
+
+.zp-msg.good .timesheet-status {
+	color: #0f9b00;
+}
+
+.zp-msg.perfect .timesheet-status {
+	color: #0053d1;
+}
+
+.zp-msg.genius .timesheet-status {
+	color: #b500ab;
+}
+
+.zp-msg.over .timesheet-status {
+	color: #ce0000;
+}
+
+.zp-msg.not-enough .timesheet-status {
+}
+
+.zpfcal .datelist .day .zpflc {
+	box-sizing: border-box;
+}
+
+.zpfcal .datelist .day.absent .zpflc {
+	background: #fccccc;
+}
+
+.zpfcal .datelist .day.holiday .zpflc {
+	background: #ccdffc;
+}
+
+.zpfcal .datelist .day.leave .zpflc {
+	background: #e3fccc;
+}
+
+.zpfcal .datelist .day.not-enough .zpflc {
+	box-shadow: 0 0 2px #ede400 inset;
+	background: #fffeee;
+}
+
+.zpfcal .datelist .day.not-enough.zero-timesheet .zpflc {
+	box-shadow: 0 0 2px #ede400 inset;
+	background: #fffccc;
+}
+
+.zpfcal .datelist .day.good .zpflc {
+	box-shadow: 0 0 2px #0f9b00 inset;
+}
+
+.zpfcal .datelist .day.perfect .zpflc {
+	box-shadow: 0 0 2px #0053d1 inset;
+}
+
+.zpfcal .datelist .day.genius .zpflc {
+	box-shadow: 0 0 2px #b500ab inset;
+}
+
+.zpfcal .datelist .day.over .zpflc {
+	box-shadow: 0 0 2px #ce0000 inset;
+}
+
+.zplt-label .descSelect {
+	margin-top: 10px;
+}
+
+/* HERO Timesheet Widget */
+.herotimesheet-widget .dash-head .new-record > button, .herotimesheet-widget .dash-head .monthSelect {
+	height: 30px;
+	margin-left: 10px;
+}
+
+#herotimesheet.loading {
+	position: relative;
+	overflow: hidden;
+}
+
+#herotimesheet.loading .content-loader {
+	display: block !important;
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+}
+
+#herotimesheet.loading .content-loader .loader-inner {
+    position: absolute;
+	top: 50%;
+    left: 50%;
+}
+
+table.dataTable thead .sorting_asc::after {
+	color: #187600;
+    font-weight: bold;
+}
+
+table.dataTable thead .sorting_desc::after {
+	color: #761b00;
+    font-weight: bold;
+}
+
+table.herotimesheet > tbody > tr > td:first-child {
+	padding-left: 8px !important;
+}
+
+table.herotimesheet > tbody > tr.not-enough {
+	background: #fcffe8;
+}
+
+table.herotimesheet > tbody > tr > td > .status {
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #000;
+}
+
+table.herotimesheet > tbody > tr.not-enough .status {
+	background: #f1ff9f;
+    border: 1px solid #cef100;
+}
+
+table.herotimesheet > tbody > tr.good .status {
+	background: #ccffc6;
+	border: 1px solid #8bd981;
+}
+
+table.herotimesheet > tbody > tr.perfect .status {
+	background: #d0d8ff;
+    border: 1px solid #8e9bdb;
+}
+
+table.herotimesheet > tbody > tr.genius .status {
+	background: #ffd3f7;
+	border: 1px solid #dd8cce;
+}
+
+table.herotimesheet > tbody > tr.over .status {
+	background: #ffbbbb;
+    border: 1px solid #db6e6e;
+}
+
+table.herotimesheet > tbody > tr.no-data .status {
+	background: #e5e5e5;
+    border: 1px solid #bbb;
+}
+
+table.herotimesheet > tbody > tr.holiday {
+	color: #006cb6;
+}
+
+table.herotimesheet > tbody > tr.absent {
+	color: #dd0000;
+}
+
+table.herotimesheet > tbody > tr.weekend {
+	color: #13b200;
+}
+
+table.herotimesheet > tbody > tr.leave {
+	color: #ca9500;
+}
+
+.dataTables_wrapper {
+	width: 100%;
+    padding: 10px 12px 10px 12px;
+    box-sizing: border-box;
+}
+
+.dataTables_length select {
+	font-size: 10px;
+}
+
+table.dataTable > thead > tr > th {
+	height: 20px;
+}
+
+.pagination > li > a, .pagination > li > span {
+	font-size: 15px;
+}
