@@ -1,0 +1,34 @@
+{
+   "name": "Time sh!t",
+   "description": "Don't touch to sh!t",
+   "version": "1.0",
+   "manifest_version": 2,
+   "permissions": [
+      "storage"
+   ],
+   "browser_action": {
+		"default_icon": {
+			"16": "images/icon16.png",
+			"24": "images/icon24.png",
+			"32": "images/icon32.png"
+		},
+		"default_title": "Log Timesheet Like a HERO"
+	},
+	"icons": {
+		"16": "images/get_started16.png",
+		"32": "images/get_started32.png",
+		"48": "images/get_started48.png",
+		"128": "images/get_started128.png"
+    },
+   "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+   },
+   "content_scripts": [
+		{
+			"matches": ["https://people.smartosc.com/*", "https://people.zoho.com/*"],
+			"js": ["contentScript.js"],
+			"all_frames": false
+		}
+	]
+}
