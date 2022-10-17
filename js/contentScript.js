@@ -215,7 +215,7 @@ function addTimeSheetWidget() {
 			+ '<div class="dash-head hicon IC-drag">'
 			+ '<h3 class="dash-title" data-toggle="tooltip" data-placement="right" data-html="true" title="Time is to be <b>enjoyed</b>, we don\'t <strike>count</strike> it!">HERO TimeSheet</h3>'
 			+ '<div class="pull-right">'
-			+ '<a class="new-record" href="#timesheet/form/add-formLinkName:Time_Log">'
+			+ '<a class="new-record" href="#timesheet/form/add-formLinkName:Log_Timesheet">'
 			+ '<button class="btn_lined" data-toggle="tooltip" data-html="true" title="Log Timesheet like a <b>HERO</b>"><i class="IC-add-r"></i> Log Timesheet</button>'
 			+ '</a>'
 			+ monthSelect
@@ -467,7 +467,7 @@ function getWorkingHourData(callback, monthIndex = 0, endMonthDay = 20) {
 						data: {
 							'mode':'fetchRecords',
 							'formId': '412762000158024844',
-							'viewId': '412762000003736055',
+							'viewId': '412762000158024846',
 							'isOnload': 'true',
 							'sortBy': 'Date:false',
 							'startInd': 1,
@@ -588,7 +588,6 @@ function getWorkingHourData(callback, monthIndex = 0, endMonthDay = 20) {
 }
 
 function setDefaultFormData(){
-	console.log('vao day?');
 	// Log timesheet form
 	var evt = document.createEvent("HTMLEvents");
     evt.initEvent("change", false, true);
@@ -890,7 +889,7 @@ if(currentUrl.indexOf("//people.zoho.com") != -1 || currentUrl.indexOf("//people
 		let hash = window.location.hash.toString();
 
 		// Log timesheet
-		if(hash == "#timesheet/form/add-formLinkName:Time_Log") {
+		if(hash == "#timesheet/form/add-formLinkName:Log_Timesheet") {
 			onSubPageReady(function(){
 				// SetTimeOut here because sometimes it seems trigger so fast and can not set default values
 				//setTimeout(function() {
@@ -927,7 +926,7 @@ if(currentUrl.indexOf("//people.zoho.com") != -1 || currentUrl.indexOf("//people
 		if(!myWorkingHoursByDate[firstDayCurrentMonth]) {
 			getWorkingHourData(function(){
 				// Trigger field date change when sub page ready, only in submit new record form
-				if(hash == "#timesheet/form/add-formLinkName:Time_Log") {
+				if(hash == "#timesheet/form/add-formLinkName:Log_Timesheet") {
 					jQuery("#zp_field_412762000003736077").trigger("change");
 				}
 			}, 0, 31);
@@ -939,7 +938,7 @@ if(currentUrl.indexOf("//people.zoho.com") != -1 || currentUrl.indexOf("//people
 		});
 
 		// Log timesheet
-		if(window.location.hash == "#timesheet/form/add-formLinkName:Time_Log") {
+		if(window.location.hash == "#timesheet/form/add-formLinkName:Log_Timesheet") {
 			onSubPageReady(setDefaultFormData);
 		}
 
@@ -976,8 +975,9 @@ if(currentUrl.indexOf("//people.zoho.com") != -1 || currentUrl.indexOf("//people
 		});
 
 		// Calendar field
-		jQuery(document).on("change keyup focusout", "#zp_field_412762000003736077", function(){
-			let timeSheetHoursField = $("#zp_field_412762000003736073");
+		jQuery(document).on("change keyup focusout", "#zp_field_412762000158026914", function(){
+
+			let timeSheetHoursField = $("#zp_field_412762000158027981");
 
 			if(!timeSheetHoursField.parent().find(".timesheet-hour").length)
 			{
