@@ -21,13 +21,13 @@
 		"128": "images/get_started128.png"
     },
    "background": {
-      "scripts": ["background.js"],
+      "scripts": ["js/background.js"],
       "persistent": false
    },
    "content_scripts": [
 		{
 			"matches": ["https://people.smartosc.com/*", "https://people.zoho.com/*"],
-			"js": ["contentScript.js"],
+			"js": ["js/main.js"],
 			"all_frames": false
 		}
 	]
