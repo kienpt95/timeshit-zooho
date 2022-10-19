@@ -1,3 +1,11 @@
+export enum ApprovalStatus {
+    PENDING = -1,
+    REJECT = 0,
+    APPROVED = 1,
+    CANCELED = 2,
+    DRAFT = 3
+}
+
 export default class Utils {
     static onPageReady() : Promise<any>{
         return new Promise(resolve => {
@@ -21,5 +29,11 @@ export default class Utils {
             .map(cookie => {
                 return decodeURIComponent(cookie.substring(nameLenPlus));
             })[0] || '';
+    }
+
+    static calculateWorkingTime(checkin : string, checkout: string) {
+        //format: 2022-10-14 10:31:00
+
+        
     }
 }

@@ -543,7 +543,7 @@ function getWorkingHourData(callback, monthIndex = 0, endMonthDay = 20) {
 								}
 							});
 
-							//console.log(myWorkingHours);
+							console.log(myWorkingHours);
 
 							// Custom callback function
 							chrome.storage.sync.get(['config'], function(result){

@@ -1,5 +1,6 @@
 // const axios = require('axios');
 import Utils from './utils';
+import Config from './config';
 
 enum RequestMethod {
     POST = 'post',
@@ -63,5 +64,23 @@ export default class ZohoClient {
         });
 
         return result;
+    }
+
+    public getTimeSheetRecord() : Promise<any> {
+        return new Promise((resolve) => {
+            this.makeRequest(RequestMethod.POST, '/viewAction.zp', {
+                'mode':'fetchRecords',
+                'formId': Config.APPROVAL_FORM_ID,
+                'viewId': Config.APPROVAL_VIEW_ID,
+                'isOnload': 'true',
+                'sortBy': 'Date:false',
+                'startInd': 1,
+                'limit': '300',
+                'conreqcsr': this.getToken()
+            }).then((response) => {
+                resolve(response.recordDetails.message.recordDetails)
+            });
+        })
+
     }
 }
