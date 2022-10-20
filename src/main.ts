@@ -8,10 +8,8 @@ async function bootstrap() {
     let monthlyRecords = await getMonthlyData(zohoClient)
     let timeSheetRecords = await getTimeSheetData(zohoClient)
 
-    $.each(timeSheetRecords, (idx, value) => {
-        if (value.approvalStatus == ApprovalStatus.PENDING || value.approvalStatus == ApprovalStatus.APPROVED) {
+    $.each(monthlyRecords, (idx, value) => {
 
-        }
     })
 }
 

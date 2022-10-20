@@ -34,6 +34,6 @@ export default class Utils {
     static calculateWorkingTime(checkin : string, checkout: string) {
         //format: 2022-10-14 10:31:00
 
-        
+
     }
 }
