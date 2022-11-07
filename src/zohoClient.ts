@@ -66,7 +66,7 @@ export default class ZohoClient {
         return result;
     }
 
-    public getTimeSheetRecord() : Promise<any> {
+    public getTimeSheetRecord() : Promise<Array<object>> {
         return new Promise((resolve) => {
             this.makeRequest(RequestMethod.POST, '/viewAction.zp', {
                 'mode':'fetchRecords',

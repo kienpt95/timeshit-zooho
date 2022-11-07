@@ -1,30 +1,23 @@
-import ZohoClient from './zohoClient';
+import Zoho from './zoho';
 import Utils, { ApprovalStatus } from './utils';
 
 async function bootstrap() {
     await Utils.onPageReady()
-    let zohoClient = new ZohoClient();
+    let zoho = new Zoho();
 
-    let monthlyRecords = await getMonthlyData(zohoClient)
-    let timeSheetRecords = await getTimeSheetData(zohoClient)
+    let monthlyRecords: Array<object> = [];
+    let timeSheetRecords : Array<object> = [];
 
-    $.each(monthlyRecords, (idx, value) => {
+    await Promise.all([
+        zoho.getMonthlyData(),
+        zoho.getTimeSheetData()
+    ]).then(values => [monthlyRecords, timeSheetRecords] = values)
 
-    })
+    let workingHoursData = Zoho.buildWorkingHoursData(monthlyRecords, timeSheetRecords)
+    console.log('monthlyRecords', monthlyRecords);
+    console.log('timeSheetRecords', timeSheetRecords)
 }
 
 bootstrap();
 
 
-async function getMonthlyData(zohoClient: ZohoClient) {
-    await Promise.all([
-        zohoClient.getMonthlyData(1),
-        zohoClient.getMonthlyData(0)]
-    ).then((values) => {
-        return values.flat()
-    });
-}
-
-async function getTimeSheetData(zohoClient: ZohoClient) {
-    return await zohoClient.getTimeSheetRecord()
-}
